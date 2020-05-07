@@ -76,9 +76,9 @@ endif()
 #
 #set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 #
-#if(USE_WMAIN)
-#    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:wmainCRTStartup")
-#endif()
+if(USE_WMAIN)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:wmainCRTStartup")
+endif()
 #
 #
 #
