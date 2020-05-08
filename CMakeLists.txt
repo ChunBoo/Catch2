@@ -37,6 +37,10 @@ include(CTest)
 # than later in the install block
 set(CATCH_CMAKE_CONFIG_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/Catch2")
 
+if(USE_WMAIN)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:wmainCRTStartup")
+endif()
+
 
 # Basic paths
 set(CATCH_DIR ${CMAKE_CURRENT_SOURCE_DIR})
@@ -76,9 +80,6 @@ endif()
 #
 #set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 #
-if(USE_WMAIN)
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:wmainCRTStartup")
-endif()
 #
 #
 #
